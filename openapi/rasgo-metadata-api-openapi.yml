@@ -1,0 +1,66 @@
+openapi: 3.1.0
+info:
+  title: Rasgo Metadata API
+  version: beta
+  description: Functional endpoints for automating customer interactions with Rasgo data-warehouse metadata. Available to Rasgo customers on Enterprise plans and above. The API is in beta; Rasgo reserves the right to change endpoint names and contracts.
+  contact:
+    name: Rasgo
+    url: https://docs.rasgoml.com/rasgo-docs/api.md
+servers:
+- url: https://api.rasgoml.com
+  description: Production API host
+security:
+- bearerAuth: []
+tags:
+- name: Metadata
+  description: Table metadata operations
+paths:
+  /public/table-metadata:
+    post:
+      operationId: sendTableMetadata
+      tags:
+      - Metadata
+      summary: Attach notes to a data-warehouse table
+      description: Send one or many natural-language notes to a fully-qualified table name (FQTN) so the Rasgo AI agent can learn about your data. Existing notes are detected and skipped to avoid duplicates. Editing and deleting notes is handled in the Rasgo WebApp, not via this endpoint.
+      security:
+      - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TableMetadataRequest'
+            example:
+              fqtn: DATABASE.SCHEMA.TABLE
+              notes:
+              - This is a note
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                type: string
+              example: 'Sent 1 notes to Table DATABASE.SCHEMA.TABLE. View these changes in the Rasgo WebApp: app.rasgoml.com/datasets/{dataset}'
+components:
+  schemas:
+    TableMetadataRequest:
+      type: object
+      required:
+      - fqtn
+      - notes
+      properties:
+        fqtn:
+          type: string
+          description: Fully-qualified table name, DATABASE.SCHEMA.TABLE.
+          example: DATABASE.SCHEMA.TABLE
+        notes:
+          type: array
+          description: One or many note strings to attach to the table.
+          items:
+            type: string
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      description: Personal Rasgo API key passed as a Bearer token. Enterprise users copy their key from the WebApp User Profile > API Key menu. Requests should also send a Rasgo-Client header.

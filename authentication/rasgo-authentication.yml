@@ -1,0 +1,23 @@
+generated: '2026-07-20'
+method: searched
+source: https://docs.rasgoml.com/rasgo-docs/api.md
+docs: https://docs.rasgoml.com/rasgo-docs/api.md
+summary:
+  types: [http]
+  http_schemes: [bearer]
+  api_key_in: []
+  oauth2_flows: []
+  availability: Enterprise plans and above
+schemes:
+  - name: bearerAuth
+    type: http
+    scheme: bearer
+    description: >-
+      Personal Rasgo API key sent as an HTTP Bearer token in the Authorization header.
+      Enterprise users copy their key from the Rasgo WebApp (User Profile > API Key). Keys
+      are unique and personal and grant access to the caller's data; Rasgo warns against
+      sharing or committing them.
+    sources: [openapi/rasgo-openapi.yml]
+notes:
+  - Requests also send a `Rasgo-Client: API` header per the documented code samples.
+  - No OAuth2 / OIDC scopes are documented; access is a single personal API key.

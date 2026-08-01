@@ -1,0 +1,15 @@
+generated: '2026-07-20'
+method: derived
+status: candidate
+source: openapi/rasgo-openapi.yml
+note: >-
+  No official Rasgo MCP server was found (no hosted server in docs, npm, or MCP registries).
+  This is a candidate tool list derived from the one publicly documented API operation, as
+  a starting point for an agent integration. Not published by Rasgo.
+server:
+  name: rasgo
+  transport: http
+tools:
+  - name: send_table_metadata
+    description: Attach one or many natural-language notes to a data-warehouse table (FQTN) so the Rasgo AI agent can learn about the data.
+    source_operation: openapi/rasgo-openapi.yml#sendTableMetadata

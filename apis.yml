@@ -1,8 +1,29 @@
 aid: rasgo
 name: Rasgo
-description: Rasgo is a company surfaced as a portfolio company of insight-partners and added to the API
-  Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+description: >-
+  Rasgo is an AI-powered Copilot for your data warehouse, letting teams query and analyze
+  their data through natural-language interfaces while the data stays inside their existing
+  warehouse. The Rasgo AI agent translates data-warehouse metadata into an LLM-friendly form
+  and can be trained on a specific business domain through natural-language notes. It
+  supports Snowflake and BigQuery (with Redshift and Delta Lake via Databricks on the
+  roadmap) and integrates with OpenAI, Anthropic, Gemini, and dbt Cloud. Rasgo also offers a
+  beta HTTP API (Enterprise plans and above) and an official Python SDK, pyrasgo, that grew
+  out of its earlier data feature-engineering product line. Rasgo is backed by Insight
+  Partners.
 url: https://raw.githubusercontent.com/api-evangelist/rasgo/refs/heads/main/apis.yml
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://assets.website-files.com/6276a6c8de0316128b0a3844/6276a6c8de03160de50a38c5_rasgo-logo-inverted-rgb.svg
 x-type: company
 x-source: vc-portfolio
 x-backed-by:
@@ -11,15 +32,80 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-20'
 tags:
 - Company
-apis: []
+- Data Warehouse
+- Analytics
+- Artificial Intelligence
+- Natural Language
+- Snowflake
+- BigQuery
+- Business Intelligence
+- Metadata
+- SQL
+apis:
+- aid: rasgo:rasgo-metadata-api
+  name: Rasgo Metadata API
+  description: Table metadata operations
+  humanURL: https://docs.rasgoml.com/rasgo-docs/api.md
+  baseURL: https://api.rasgoml.com
+  tags:
+  - Metadata
+  properties:
+  - type: OpenAPI
+    url: openapi/rasgo-metadata-api-openapi.yml
+  - type: Authentication
+    url: authentication/rasgo-authentication.yml
+  - type: Conventions
+    url: conventions/rasgo-conventions.yml
+  - type: Conformance
+    url: conformance/rasgo-conformance.yml
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+x-enrichment:
+  date: '2026-07-20'
+  status: enriched
+  artifacts_added: 11
+  pass: local-v1
 common:
+- type: DomainSecurity
+  url: security/rasgo-domain-security.yml
 - type: Website
   url: https://www.rasgoml.com/
+- type: DeveloperPortal
+  url: https://docs.rasgoml.com/
+- type: Documentation
+  url: https://docs.rasgoml.com/rasgo-docs/readme.md
+- type: APIReference
+  url: https://docs.rasgoml.com/rasgo-docs/api.md
+- type: GettingStarted
+  url: https://docs.rasgoml.com/rasgo-docs/set-up-rasgo.md
+- type: SignUp
+  url: https://app.rasgoml.com/
+- type: ChangeLog
+  url: https://docs.rasgoml.com/rasgo-docs/whats-new.md
+- type: LLMsTxt
+  url: llms/rasgo-llms.txt
+- type: Packages
+  url: packages/rasgo-packages.yml
+- type: SDKs
+  url: packages/rasgo-packages.yml
+- type: Authentication
+  url: authentication/rasgo-authentication.yml
+- type: Conventions
+  url: conventions/rasgo-conventions.yml
+- type: Conformance
+  url: conformance/rasgo-conformance.yml
+- type: Lifecycle
+  url: lifecycle/rasgo-lifecycle.yml
+- type: ChangeLog
+  url: changelog/rasgo-changelog.yml
+  name: Rasgo changelog artifact
+- type: MCPServer
+  url: mcp/rasgo-mcp.yml
+- type: AgentSkill
+  url: skills/_index.yml

@@ -1,0 +1,47 @@
+generated: '2026-07-20'
+method: searched
+source: https://docs.rasgoml.com/rasgo-docs/api.md
+summary: >-
+  Cross-cutting conventions for the Rasgo API, captured from the published API docs. The
+  API is beta and explicitly "not opinionated" / not strictly RESTful; it exposes
+  functional POST endpoints under https://api.rasgoml.com.
+authentication:
+  style: bearer-api-key
+  header: Authorization
+  detail: Bearer {api_key}; see authentication/rasgo-authentication.yml
+required_headers:
+  - name: Rasgo-Client
+    value: API
+    detail: Documented in all API code samples.
+  - name: Content-Type
+    value: application/json
+base_url: https://api.rasgoml.com
+transport:
+  method: POST
+  content_type: application/json
+  detail: Endpoints are functional POST calls, not resource-oriented REST.
+idempotency:
+  key_header: null
+  supported: false
+  note: >-
+    No Idempotency-Key contract is documented. The /public/table-metadata endpoint does
+    de-duplicate at the data layer (it detects and skips notes that already exist), but
+    this is endpoint behavior, not a request-level idempotency key.
+pagination:
+  supported: false
+  note: No pagination is documented for the published endpoints.
+versioning:
+  scheme: none-documented
+  stability: beta
+  note: >-
+    Rasgo reserves the right to change endpoint names and contracts; there is no version
+    path segment or version header documented.
+error_envelope:
+  documented: false
+  note: Only 200 responses are documented; no structured error envelope is published.
+rate_limits:
+  documented: false
+cross_links:
+  authentication: authentication/rasgo-authentication.yml
+  lifecycle: lifecycle/rasgo-lifecycle.yml
+  changelog: changelog/rasgo-changelog.yml

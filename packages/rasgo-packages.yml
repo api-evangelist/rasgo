@@ -1,0 +1,22 @@
+generated: '2026-07-20'
+method: searched
+source: https://pypi.org/project/pyrasgo/
+note: >-
+  pyrasgo is Rasgo's official first-party Python SDK for the Rasgo API (author
+  patrick@rasgoml.com / Rasgo). It dates from the earlier feature-engineering product line;
+  latest release 2023.5.1 (2023-05-20), 254 releases since 2020. Source is hosted under the
+  rasgointelligence GitHub org. No JavaScript/other-language first-party SDKs were found.
+packages:
+  - language: python
+    registry: pypi
+    name: pyrasgo
+    url: https://pypi.org/project/pyrasgo/
+    install: pip install pyrasgo
+    official: true
+    version: 2023.5.1
+    license: AGPL-3.0-or-later
+    source: https://github.com/rasgointelligence/RasgoSDKPython
+    docs: https://docs.rasgoml.com/rasgo-docs/pyrasgo/
+    extras:
+      - name: snowflake
+        install: pip install "pyrasgo[snowflake]"

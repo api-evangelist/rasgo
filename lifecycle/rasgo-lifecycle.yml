@@ -1,0 +1,22 @@
+generated: '2026-07-20'
+method: searched
+source: https://docs.rasgoml.com/rasgo-docs/api.md
+versioning:
+  scheme: none-documented
+  current: beta
+  docs: https://docs.rasgoml.com/rasgo-docs/api.md
+  note: >-
+    Rasgo states the API is in beta and reserves the right to change endpoint names and
+    contracts; callers are advised to check the docs if previous calls stop working.
+deprecation:
+  policy_url: null
+  sunset_header: false
+  note: >-
+    No formal deprecation policy or RFC 8594 Sunset/Deprecation header support is
+    documented. The pyrasgo SDK historically deprecated its implicit Snowflake install at
+    v2.0.0, but there is no API-level deprecation policy.
+sla:
+  url: null
+release_notes: https://docs.rasgoml.com/rasgo-docs/whats-new.md
+status_page: null
+deprecated_operations: []

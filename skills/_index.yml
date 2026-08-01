@@ -1,0 +1,7 @@
+generated: '2026-07-20'
+method: generated
+skills:
+  - file: rasgo-attach-table-metadata.md
+    name: Attach metadata notes to a Rasgo table
+    api: openapi/rasgo-openapi.yml
+    operations: [sendTableMetadata]

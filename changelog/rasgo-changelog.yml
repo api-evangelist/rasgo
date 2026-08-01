@@ -1,0 +1,31 @@
+generated: '2026-07-20'
+method: searched
+source: https://docs.rasgoml.com/rasgo-docs/whats-new.md
+scheme: dated-release-notes
+current_version: beta
+note: >-
+  Rasgo's public "What's New" release notes cover the product (WebApp/AI Copilot), not the
+  API contract specifically. Rasgo states release notes have moved to a private monthly
+  announcement (Slack/Teams/email); the entries below are the most recent publicly listed.
+entries:
+  - date: '2023-05-30'
+    highlights:
+      - AI Insight improvements (toggle table/visualization view, exclude datasets from the AI)
+    breaking: false
+  - date: '2023-05-22'
+    highlights:
+      - AI Manager - write natural-language notes to teach the AI agent about your data
+      - Ask follow-up questions to tweak AI-generated SQL
+    breaking: false
+  - date: '2023-05-11'
+    highlights:
+      - AI Insights in Preview - natural-language answers with SQL, visualization, interpretation
+    breaking: false
+  - date: '2023-04-04'
+    highlights:
+      - Generate a transform with natural language (experimental)
+    breaking: false
+  - date: '2023-03-28'
+    highlights:
+      - New Canvas experience for constructing queries
+    breaking: false

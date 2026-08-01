@@ -1,0 +1,14 @@
+{
+  "provider": "rasgo",
+  "sources": [
+    "rasgo-metadata-api-openapi.yml"
+  ],
+  "outputs": [
+    "rasgo-metadata-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}

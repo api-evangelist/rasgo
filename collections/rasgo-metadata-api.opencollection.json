@@ -1,0 +1,43 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Rasgo Metadata API",
+    "version": "beta"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Metadata",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Attach notes to a data-warehouse table",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.rasgoml.com/public/table-metadata",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Send one or many natural-language notes to a fully-qualified table name (FQTN) so the Rasgo AI agent can learn about your data. Existing notes are detected and skipped to avoid duplicates. Editing and deleting notes is handled in the Rasgo WebApp, not via this endpoint."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

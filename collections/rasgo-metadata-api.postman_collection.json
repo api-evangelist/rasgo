@@ -1,0 +1,150 @@
+{
+  "item": [
+    {
+      "id": "5a2485e1-11ca-4a81-b1dc-aba8826c614d",
+      "name": "Metadata",
+      "description": {
+        "content": "Table metadata operations",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "24402f1a-bb04-4ae6-a789-f49aab7d9aba",
+          "name": "Attach notes to a data-warehouse table",
+          "request": {
+            "name": "Attach notes to a data-warehouse table",
+            "description": {
+              "content": "Send one or many natural-language notes to a fully-qualified table name (FQTN) so the Rasgo AI agent can learn about your data. Existing notes are detected and skipped to avoid duplicates. Editing and deleting notes is handled in the Rasgo WebApp, not via this endpoint.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "public",
+                "table-metadata"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"fqtn\": \"<string>\",\n  \"notes\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "0da6f75b-8219-4b4c-acd9-d1a0c15d48a8",
+              "name": "Successful Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "public",
+                    "table-metadata"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"fqtn\": \"DATABASE.SCHEMA.TABLE\",\n  \"notes\": [\n    \"This is a note\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"Sent 1 notes to Table DATABASE.SCHEMA.TABLE. View these changes in the Rasgo WebApp: app.rasgoml.com/datasets/{dataset}\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.rasgoml.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "1137f757-bbcd-4cdc-b63c-7db1bca43c70",
+    "name": "Rasgo Metadata API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Functional endpoints for automating customer interactions with Rasgo data-warehouse metadata. Available to Rasgo customers on Enterprise plans and above. The API is in beta; Rasgo reserves the right to change endpoint names and contracts.\n\nContact Support:\n Name: Rasgo",
+      "type": "text/plain"
+    }
+  }
+}

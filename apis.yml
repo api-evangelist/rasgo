@@ -11,6 +11,18 @@ description: >-
   out of its earlier data feature-engineering product line. Rasgo is backed by Insight
   Partners.
 url: https://raw.githubusercontent.com/api-evangelist/rasgo/refs/heads/main/apis.yml
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: false
+  label: Hosted service · you call their endpoint
+  confidence: medium
+  source:
+  - openapi
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: unknown
   onboarding: self-serve
